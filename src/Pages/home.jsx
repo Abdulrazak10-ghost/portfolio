@@ -24,9 +24,9 @@ import {
 export default function Home() {
   // Hero slides
   const slides = [
-    { image: firstimage, title: "I am Abdulrazak", text: "Front-End Developer and Web developer.", color: "cyan" },
-    { image: secondimage, title: "I am Abdulrazak", text: "I love creating smooth web experiences.", color: "yellow" },
-    { image: thirdimage, title: "I am Abdulrazak", text: "Turning ideas into interactive websites.", color: "red" },
+    { image: firstimage, title: "I am Abdulrazak", text: "    Front-End Developer and Web developer.", color: "cyan" },
+    { image: secondimage, title: "I am Abdulrazak", text: "   I love creating smooth web experiences.", color: "yellow" },
+    { image: thirdimage, title: "I am Abdulrazak", text: "    Turning ideas into interactive websites.", color: "red" },
   ];
 
   const [current, setCurrent] = useState(0);
