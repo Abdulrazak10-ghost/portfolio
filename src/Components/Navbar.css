@@ -1,0 +1,220 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ 
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  color: black;
+  padding: 1rem 2rem;
+  position: relative;
+  top: 0;
+}
+
+.navlogo  h1{
+  font-size: 1em;
+  cursor: pointer;
+  font-family: 'Anton', sans-serif;
+  color: #000;
+  text-align: center;
+  align-items: center;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 800;
+  letter-spacing: 2px;
+  
+  
+}
+.navlogo span{
+  color: cyan;
+  font-weight: bold;
+ 
+}
+
+.navlogo a{
+  text-decoration: none;
+  
+}
+
+
+.navlinks {
+  display: flex;
+  gap: 1rem;
+  z-index: 999;
+ 
+}
+.navlinks a {
+ color: #000;
+  text-decoration: none;
+  position: relative;   /* needed for the underline */
+  padding-bottom: 3px;  /* some space for the underline */
+  font-size: 18px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 7px 10px;
+  background: #fafafa;
+  border-radius: 15px;
+  transition: background 0.8s ease-in-out;
+  
+}
+
+
+.navlinks a:hover {
+ background: cyan;
+ color: #fafafa;
+}
+
+
+.menu-toggle {
+  display: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #000;
+  font-weight: bold;
+}
+
+
+/* ===== Responsive ===== */
+@media (min-width: 769px){
+  .left{
+  justify-content: flex-start;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.navlinks{
+   justify-content: flex-end;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.navlogo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+}
+
+@media (max-width: 880px){
+  .navlogo h1{
+    font-size: 0.8em;
+  }
+  .navlinks a{
+    font-size: 15px;
+  }
+}
+@media (max-width: 768px) {
+
+  
+
+ .navlinks a {
+    color: white;
+    font-size: 15px;
+    margin: 1rem 0;
+    padding: 0;          /*  remove padding */
+    background: none;    /*  remove background */
+  }
+
+  .navlinks a:hover {
+    background: none;    /* disable hover background */
+    color: white;        /* keep consistent */
+  }
+
+  .navlinks.show {
+    right: 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+  .navlogo {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width:468px){
+  .navlogo{
+    font-size: 0.8em;
+  }
+  .menu-toggle{
+    font-size: 1em;
+  }
+}
+.navlinks {
+  display: flex;
+  gap: 1.5rem;
+  z-index: 1000; /* make sure it's above page content */
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+   .navlinks {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    flex-direction: column;
+    width: 60%;
+    height: 100vh;
+    padding: 2rem 1rem;
+    background: #000;
+    transition: right 0.5s ease-in-out;
+    z-index: 1200; /* makes sure menu sits above body */
+  }
+  .navlinks a{
+    color: #fafafa;
+  }
+
+  .navlogo img{
+    width: 60%;
+    height: 60px;
+  }
+
+  .navlinks.show {
+    right: 0;
+  }
+
+  .nav-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 999;
+  }
+
+  .nav-overlay.show {
+    display: block;
+  }
+}
+/* Close button inside mobile menu */
+.close-btn {
+  display: none;
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  align-self: flex-start;
+  margin-bottom: 1.5rem;
+}
+
+/* Show only on mobile */
+@media (max-width: 768px) {
+  .close-btn {
+    display: block;
+  }
+}
+@media (max-width: 468px){
+  .navlogo img{
+    width: 50px;
+    height: 30px;
+    margin-top: 10px;
+  }
+}
+
